@@ -1,6 +1,8 @@
+<body style="background-color:powderblue;">
 What is your name?
 
 <form method = 'post' action = '/input'> 	
-  Name: <input type= "text" name= "user_name"><br>
+  Name: <input type= "text" name= "user_name" pattern = "[a-zA-Z]{1-15}"><br>
   <input type="submit" value="submit">
 </form>
+</body>

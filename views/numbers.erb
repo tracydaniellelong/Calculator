@@ -1,3 +1,4 @@
+<body style="background-color:powderblue;">
 <form method = 'post' action = '/numbers'>	
 	<%= user_name%> what would you like to calculate? <br>
 	<input type = "integer" name = "num1">
@@ -8,7 +9,8 @@
 		<option value = "divide">divide</option>
 	</select>
 	<input type = "integer" name = "num2"><br>
- 	<input type= "submit" value= "submit"><br>
+ 	<input type = "submit" value = "submit"><input type = "reset" value = "reset"><br>
  	<input type = "hidden" name = "user_name" value = "<%= user_name%>">
 </form>
+</body>
 
