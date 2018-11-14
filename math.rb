@@ -1,17 +1,17 @@
-def add(num1, num2, num3)
-	num1 + num2 + num3
+def add(num1, num2)
+	num1 + num2 
 end
 
-def subtract(num1, num2, num3)
-	num1 - num2 - num3
+def subtract(num1, num2)
+	num1 - num2 
 end
 
-def multiply(num1, num2, num3)
-	num1 * num2 * num3
+def multiply(num1, num2)
+	num1 * num2 
 end
 
-def divide(num1, num2, num3)
-	num1 / num2 / num3
+def divide(num1, num2)
+	num1 / num2
 end
 
 
