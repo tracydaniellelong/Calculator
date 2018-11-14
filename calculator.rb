@@ -12,7 +12,6 @@ end
 
 get '/numbers' do
 	user_name = params[:user_name]
-	operator
 	erb :numbers, locals: {user_name: user_name}
 end
 
@@ -20,10 +19,12 @@ post '/numbers' do
 	operator = params[:operator]
 	num1 = params[:num1]
 	num2 = params[:num2]
-	redirect '/results?num1=' + num1 + '&num2=' + num2 + '&operator=' + operator  
+	user_name = params[:user_name]
+	redirect '/results?num1=' + num1 + '&num2=' + num2 + '&operator=' + operator + '&user_name=' + user_name
 end
 
 get '/results' do
+	user_name = params[:user_name]
 	operator = params[:operator]
 	num1 = params[:num1].to_f
 	num2 = params[:num2].to_f
@@ -34,9 +35,11 @@ get '/results' do
 	elsif operator == "multiply"
 		total = multiply(num1, num2)
 	else
-		if num1 >= 1 && num2 > 1
+		if num1 >= 1 && num2 >= 1
 			total = divide(num1, num2)
+		else
+			total = 0
 		end
 	end
-	erb :results, locals: {operator: operator, num1: num1, num2: num2, total: total}
+	erb :results, locals: {operator: operator, num1: num1, num2: num2, total: total, user_name: user_name}
 end
